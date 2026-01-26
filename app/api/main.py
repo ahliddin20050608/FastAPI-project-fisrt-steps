@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from contextlib import asynccontextmanager
+from contextlib import asynccontextmanager, contextmanager
 from sqlalchemy import text
 from app.api.v1 import user_router
 from app.schemas import settings
@@ -17,6 +17,7 @@ async def lifespan(app:FastAPI):
     try:
         with SessionLocal() as db:
             db.execute(text("SELECT 1"))
+        logger.INFO("Database connected")
     except Exception as e:
         print("Database connection error",e)
     remove_pycaches_ad_pycs(BASE_DIR)

@@ -22,6 +22,11 @@ class AppSettings(BaseSettings):
     ALGORITHM: str
     DEFAULT_TOKEN_EXPIRE_MINUTE: int
     
+    
+    HOST: str
+    # bot
+    BOT_TOKEN: str
+    
     model_config =  SettingsConfigDict(
         env_file=ENV_DIR,
         env_file_encoding='utf-8',

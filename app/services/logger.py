@@ -5,4 +5,4 @@ def get_logger(name:str):
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
-    return logging.Logger
+    return logging.getLogger(name)
