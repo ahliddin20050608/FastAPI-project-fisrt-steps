@@ -6,7 +6,7 @@ def remove_pycaches_ad_pycs(directory):
         if "__pycache__" in dirs:
             pycache_dir = os.path.join(root, "__pycache__")
             print(f"Removing directory: {pycache_dir}")
-            shutil.rmtree(pycache_dir) # Use shutil.rmtree for directories
+            shutil.rmtree(pycache_dir) 
             
             
         for file in files:

@@ -22,6 +22,7 @@ class OTP(Base):
     user_id:Mapped[int] = mapped_column(ForeignKey("users.id"))
     code:Mapped[str] = mapped_column(String(6), unique=True)
     expired_at:Mapped[datetime] = mapped_column(DateTime)
+    is_active:Mapped[bool] = mapped_column(default=False)
     
     user:Mapped["User"] = relationship(back_populates="otps")
     
