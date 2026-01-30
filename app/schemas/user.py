@@ -7,3 +7,7 @@ class UserSchema(BaseModel):
     username:str
     chat_id:str
     phone_number:str
+
+
+class CodeSchema(BaseModel):
+    code:str

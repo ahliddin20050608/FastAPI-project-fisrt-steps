@@ -13,7 +13,7 @@ class User(Base):
     phone_number:Mapped[str] = mapped_column(String(20), unique=True)
     is_active:Mapped[bool] = mapped_column(default=False)
     chat_id:Mapped[str] = mapped_column(String(20))
-    otps:Mapped[List["OTP"]] = relationship(back_populates="users")
+    otps:Mapped[List["OTP"]] = relationship(back_populates="user")
     
 class OTP(Base):
     __tablename__ = "otps"

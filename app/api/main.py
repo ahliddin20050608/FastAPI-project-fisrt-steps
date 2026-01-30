@@ -2,13 +2,11 @@ from fastapi import FastAPI
 from contextlib import asynccontextmanager, contextmanager
 from sqlalchemy import text
 from app.api.v1 import user_router
-from app.schemas import settings
 from app.db import SessionLocal
 from app.services import remove_pycaches_ad_pycs
 from app.schemas import BASE_DIR
 from app.services import get_logger
 
-import logging
 
 logger = get_logger(__name__)
 
